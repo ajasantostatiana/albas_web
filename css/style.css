@@ -1,21 +1,110 @@
-:root{ --primario:#111827; --texto:#1f2937; --bg:#ffffff; }
-*{ box-sizing:border-box }
-body{ margin:0; font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif; color:var(--texto); background:var(--bg); line-height:1.6 }
-.container{ max-width:1100px; margin:0 auto; padding:0 1rem }
+/* ======= Variables y tipografías ======= */
+:root{
+  --marron:#9a7b5f;        /* banda superior */
+  --marron-osc:#7d634c;
+  --crema:#efe3d1;         /* bloque texto */
+  --negro:#1a1a1a;
+  --gris:#4b4b4b;
+  --maxw: 1100px;
+}
 
-.site-header{ position:sticky; top:0; background:#fff; border-bottom:1px solid #e5e7eb }
-.nav{ display:flex; align-items:center; justify-content:space-between; height:64px }
-.logo{ font-weight:700; text-decoration:none; color:var(--primario) }
-.menu{ display:flex; gap:1rem; list-style:none; margin:0; padding:0 }
-.menu a{ text-decoration:none; color:var(--primario) }
-.menu-toggle{ display:none; background:none; border:0; font-size:1.5rem }
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  color:var(--negro);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height:1.7;
+  background:#fff;
+}
+.container{max-width:var(--maxw); margin:0 auto; padding:0 1rem}
 
-.hero{ padding:4rem 0; text-align:center }
-.hero h1{ font-size:clamp(2rem,4vw,3rem); margin:0 0 .5rem }
-.btn{ display:inline-block; margin-top:1rem; padding:.8rem 1.25rem; border-radius:.5rem; background:var(--primario); color:#fff; text-decoration:none }
+/* ======= Cabecera marrón con logo + contacto ======= */
+.masthead{
+  background: linear-gradient(180deg, var(--marron), var(--marron-osc));
+  color:#fff;
+}
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  min-height:120px;
+  gap:1rem;
+}
 
-@media (max-width:768px){
-  .menu{ display:none; flex-direction:column; align-items:flex-start; padding:1rem 0 }
-  .menu.is-open{ display:flex }
-  .menu-toggle{ display:inline-block }
+/* Marca (logo + textos) */
+.brand{display:flex; align-items:center; gap:1rem}
+.logo-img{height:68px; width:auto; object-fit:contain}
+.brand-name{
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  letter-spacing:.08em;
+  font-weight:700;
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+}
+.brand-role{
+  font-family: "Playfair Display", Georgia, serif;
+  letter-spacing:.35em;
+  font-size:.8rem;
+}
+
+/* Contacto en cabecera */
+.contact{display:flex; align-items:center; gap:1.25rem; flex-wrap:wrap}
+.contact-item{
+  display:inline-flex; align-items:center; gap:.5rem;
+  color:#fff; text-decoration:none; font-weight:500;
+  opacity:.95;
+}
+.contact-item:hover{opacity:1; text-decoration:underline}
+
+/* ======= Hero: foto grande ======= */
+.hero-photo{
+  height: 48vh;
+  min-height: 320px;
+  background-image: url("../images/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+/* ======= Bloque de introducción crema ======= */
+.intro{
+  background: var(--crema);
+  margin-top: -30px;            /* superpone un poco sobre la foto */
+  position: relative;
+  z-index: 2;
+  padding: 2.25rem 0 2.5rem;
+  border-top: 1px solid rgba(0,0,0,.06);
+}
+.intro-content{max-width: var(--maxw)}
+.lede{
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(1.05rem, 2.1vw, 1.35rem);
+  color: var(--gris);
+  margin: .25rem 0 1.75rem 0;
+}
+
+/* CTA de contacto inferior */
+.intro-cta{
+  display:flex; gap:2rem; align-items:center; flex-wrap:wrap;
+}
+.intro-cta .contact-item{
+  color:var(--negro);
+  text-decoration:none;
+}
+.intro-cta .contact-item:hover{ text-decoration:underline }
+
+/* ======= Footer ======= */
+.site-footer{
+  padding:1.75rem 0; border-top:1px solid #eee; color:#555; font-size:.95rem;
+}
+
+/* ======= Responsive ======= */
+@media (max-width: 900px){
+  .topbar{flex-direction:column; align-items:flex-start; gap:.75rem; padding:1rem 0}
+  .brand{gap:.75rem}
+  .logo-img{height:58px}
+}
+@media (max-width: 600px){
+  .hero-photo{height: 40vh; min-height: 260px}
+  .brand-name{font-size:1rem}
+  .brand-role{font-size:.75rem}
 }
