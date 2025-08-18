@@ -1,0 +1,21 @@
+:root{ --primario:#111827; --texto:#1f2937; --bg:#ffffff; }
+*{ box-sizing:border-box }
+body{ margin:0; font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif; color:var(--texto); background:var(--bg); line-height:1.6 }
+.container{ max-width:1100px; margin:0 auto; padding:0 1rem }
+
+.site-header{ position:sticky; top:0; background:#fff; border-bottom:1px solid #e5e7eb }
+.nav{ display:flex; align-items:center; justify-content:space-between; height:64px }
+.logo{ font-weight:700; text-decoration:none; color:var(--primario) }
+.menu{ display:flex; gap:1rem; list-style:none; margin:0; padding:0 }
+.menu a{ text-decoration:none; color:var(--primario) }
+.menu-toggle{ display:none; background:none; border:0; font-size:1.5rem }
+
+.hero{ padding:4rem 0; text-align:center }
+.hero h1{ font-size:clamp(2rem,4vw,3rem); margin:0 0 .5rem }
+.btn{ display:inline-block; margin-top:1rem; padding:.8rem 1.25rem; border-radius:.5rem; background:var(--primario); color:#fff; text-decoration:none }
+
+@media (max-width:768px){
+  .menu{ display:none; flex-direction:column; align-items:flex-start; padding:1rem 0 }
+  .menu.is-open{ display:flex }
+  .menu-toggle{ display:inline-block }
+}
