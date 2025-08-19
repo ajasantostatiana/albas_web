@@ -60,8 +60,8 @@ body{
   height: 60vh;
   min-height: 420px;
   background-image: url("../images/justice.png");
-  background-size: cover;
-  background-position: center 35%;
+  background-size: contain;
+  background-position: center;
   position: relative;
 }
 
