@@ -57,11 +57,11 @@ body{
 
 /* ======= Hero: foto grande ======= */
 .hero-photo{
-  height: 48vh;
-  min-height: 320px;
+  height: 60vh;
+  min-height: 420px;
   background-image: url("../images/justice.png");
   background-size: cover;
-  background-position: center;
+  background-position: center 35%;
   position: relative;
 }
 
@@ -71,7 +71,7 @@ body{
   margin-top: -30px;            /* superpone un poco sobre la foto */
   position: relative;
   z-index: 2;
-  padding: 2.25rem 0 2.5rem;
+  padding: 1.25rem 0 1rem;
   border-top: 1px solid rgba(0,0,0,.06);
 }
 .intro-content{max-width: var(--maxw)}
@@ -84,6 +84,7 @@ body{
 
 /* CTA de contacto inferior */
 .intro-cta{
+  display: none !important;
   display:flex; gap:2rem; align-items:center; flex-wrap:wrap;
 }
 .intro-cta .contact-item{
