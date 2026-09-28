@@ -1,0 +1,268 @@
+/* ======= Variables y tipografías ======= */
+:root{
+  --marron:#826D55;
+  --marron-osc:#826D55;
+  --crema:#efe3d1;
+  --negro:#1a1a1a;
+  --gris:#4b4b4b;
+  --maxw: 1100px;
+}
+
+*{box-sizing:border-box}
+
+html,
+body{
+  margin:0;
+  padding:0;
+  overflow-x:hidden; /* NUEVO */
+}
+
+body{
+  color:var(--negro);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height:1.7;
+  background:#fff;
+}
+
+.container{
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding:0 1rem;
+}
+
+
+/* ======= Cabecera marrón con logo + contacto ======= */
+.masthead{
+  background: linear-gradient(180deg, var(--marron), var(--marron-osc));
+  color:#fff;
+}
+
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  min-height:120px;
+  gap:1rem;
+}
+
+
+/* Marca (logo + textos) */
+.brand{
+  display:flex;
+  align-items:center;
+  gap:1rem;
+}
+
+.logo-img{
+  height:68px;
+  width:auto;
+  object-fit:contain;
+}
+
+.brand-name{
+  font-family:"Playfair Display", Georgia, "Times New Roman", serif;
+  letter-spacing:.08em;
+  font-weight:700;
+  font-size:clamp(1rem, 2.5vw, 1.1rem);
+}
+
+.brand-role{
+  font-family:"Playfair Display", Georgia, serif;
+  letter-spacing:.35em;
+  font-size:.8rem;
+}
+
+
+/* Contacto en cabecera */
+.contact{
+  display:flex;
+  align-items:center;
+  gap:1.25rem;
+  flex-wrap:wrap;
+}
+
+.contact-item{
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  color:#fff;
+  text-decoration:none;
+  font-weight:500;
+  opacity:.95;
+}
+
+.contact-item:hover{
+  opacity:1;
+  text-decoration:underline;
+}
+
+
+/* ======= Hero: foto grande ======= */
+.hero-photo{
+  height:60vh;
+  min-height:420px;
+  background-image:url("../images/justice.jpeg");
+  background-size:cover;
+  background-position:center;
+  position:relative;
+}
+
+
+/* ======= Bloque de introducción crema ======= */
+.intro{
+  background:var(--crema);
+  margin-top:-30px;
+  position:relative;
+  z-index:2;
+  padding:1.25rem 0 1rem;
+  border-top:1px solid rgba(0,0,0,.06);
+}
+
+.intro-content{
+  max-width:var(--maxw);
+}
+
+.lede{
+  font-family:"Playfair Display", Georgia, serif;
+  font-size:clamp(1.05rem, 2.1vw, 1.35rem);
+  color:var(--gris);
+  margin:.25rem 0 1.75rem 0;
+}
+
+
+/* ======= CTA de contacto inferior ======= */
+
+.intro-cta{
+  display:flex;
+  gap:2rem;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+.intro-cta .contact-item{
+  color:var(--negro);
+  text-decoration:none;
+}
+
+.intro-cta .contact-item:hover{
+  text-decoration:underline;
+}
+
+
+/* ======= CARTEL / ACREDITACIONES ======= */
+/* NUEVO */
+
+.acreditaciones{
+  background:#fff;
+  padding:2.5rem 0 2.75rem;
+  border-top:1px solid rgba(0,0,0,.06);
+}
+
+.acreditaciones .container{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.acreditaciones img{
+  display:block;
+  width:100%;
+  max-width:900px;
+  height:auto;
+  margin:0 auto;
+}
+
+
+/* ======= CONTACTO INFERIOR ======= */
+/* NUEVO */
+
+.contacto-inferior{
+  background:#fff;
+  padding:1.5rem 0 2rem;
+}
+
+
+/* ======= Footer ======= */
+.site-footer{
+  padding:1.75rem 0;
+  border-top:1px solid #eee;
+  color:#555;
+  font-size:.95rem;
+}
+
+
+/* ======= Responsive ======= */
+
+@media (max-width:900px){
+
+  .topbar{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:.75rem;
+    padding:1rem 0;
+  }
+
+  .brand{
+    gap:.75rem;
+  }
+
+  .logo-img{
+    height:58px;
+  }
+
+  /* NUEVO */
+  .acreditaciones{
+    padding:2rem 0;
+  }
+
+  .acreditaciones img{
+    width:100%;
+    max-width:100%;
+    height:auto;
+  }
+}
+
+
+@media (max-width:600px){
+
+  .hero-photo{
+    height:40vh;
+    min-height:260px;
+  }
+
+  .brand-name{
+    font-size:1rem;
+  }
+
+  .brand-role{
+    font-size:.75rem;
+  }
+
+  /* NUEVO */
+  .acreditaciones{
+    padding:1.5rem 0;
+  }
+
+  .acreditaciones .container{
+    padding-left:1rem;
+    padding-right:1rem;
+  }
+
+  .acreditaciones img{
+    display:block;
+    width:100%;
+    max-width:100%;
+    height:auto;
+  }
+
+  /* NUEVO */
+  .contacto-inferior{
+    padding:1rem 0 1.5rem;
+  }
+
+  .intro-cta{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:1rem;
+  }
+}
